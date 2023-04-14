@@ -42,6 +42,24 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+Применить миграции:
+
+```
+flask db upgrade
+```
+
+Запустить проект:
+
+```
+flask run
+```
+
+Проект будет доступен по адресу:
+
+```
+http://127.0.0.1:5000/
+```
+
 ### Автор проекта:
 
 Филиппович А.В.

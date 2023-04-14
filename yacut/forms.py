@@ -4,7 +4,7 @@ from wtforms.validators import (URL, DataRequired, Length, Optional, Regexp,
                                 ValidationError)
 
 from yacut.constants import REGULAR_EXPRESSION
-from yacut.models import URLmap
+from yacut.models import URLMap
 
 
 class URL_Form(FlaskForm):
@@ -23,5 +23,5 @@ class URL_Form(FlaskForm):
     submit = SubmitField('Создать')
 
     def validate_custom_id(self, field):
-        if URLmap.query.filter_by(short=field.data).first():
+        if URLMap.query.filter_by(short=field.data).first():
             raise ValidationError(f'Имя {field.data} уже занято!')

@@ -5,13 +5,13 @@ from flask import redirect, render_template
 
 from yacut import app, db
 from yacut.forms import URL_Form
-from yacut.models import URLmap
+from yacut.models import URLMap
 
 
 def get_unique_short_id():
     letters_digits = string.ascii_letters + string.digits
     rand_string = ''.join(random.sample(letters_digits, 6))
-    if URLmap.query.filter_by(short=rand_string).first():
+    if URLMap.query.filter_by(short=rand_string).first():
         return get_unique_short_id()
     return rand_string
 
@@ -23,7 +23,7 @@ def index_view():
         short_url = form.custom_id.data
         if not short_url:
             short_url = get_unique_short_id()
-        url = URLmap(
+        url = URLMap(
             original=form.original_link.data,
             short=short_url,
         )
@@ -36,5 +36,5 @@ def index_view():
 
 @app.route('/<string:short_url>')
 def redirect_view(short_url):
-    url = URLmap.query.filter_by(short=short_url).first_or_404()
+    url = URLMap.query.filter_by(short=short_url).first_or_404()
     return redirect(url.original)
