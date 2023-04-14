@@ -3,9 +3,9 @@ import string
 
 from flask import redirect, render_template
 
-from . import app, db
-from .forms import URL_Form
-from .models import URLmap
+from yacut import app, db
+from yacut.forms import URL_Form
+from yacut.models import URLmap
 
 
 def get_unique_short_id():

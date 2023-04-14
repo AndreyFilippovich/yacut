@@ -2,7 +2,7 @@ from datetime import datetime
 
 from flask import url_for
 
-from . import db
+from yacut import db
 
 
 class URLMap(db.Model):

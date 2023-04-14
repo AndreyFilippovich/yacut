@@ -3,8 +3,8 @@ from wtforms import StringField, SubmitField, URLField
 from wtforms.validators import (URL, DataRequired, Length, Optional, Regexp,
                                 ValidationError)
 
-from .constants import REGULAR_EXPRESSION
-from .models import URLmap
+from yacut.constants import REGULAR_EXPRESSION
+from yacut.models import URLmap
 
 
 class URL_Form(FlaskForm):

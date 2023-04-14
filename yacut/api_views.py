@@ -3,11 +3,11 @@ from http import HTTPStatus
 
 from flask import jsonify, request
 
-from . import app, db
-from .constants import REGULAR_EXPRESSION
-from .error_handlers import InvalidAPIUsage
-from .models import URLmap
-from .views import get_unique_short_id
+from yacut import app, db
+from yacut.constants import REGULAR_EXPRESSION
+from yacut.error_handlers import InvalidAPIUsage
+from yacut.models import URLmap
+from yacut.views import get_unique_short_id
 
 
 @app.route('/api/id/<string:short_url>/', methods=['GET'])
