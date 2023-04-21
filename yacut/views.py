@@ -23,7 +23,9 @@ def index_view():
     form = URL_Form()
     if not form.validate_on_submit():
         return render_template('main.html', form=form)
-    short_url = get_unique_short_id()
+    short_url = form.custom_id.data
+    if not short_url:
+        short_url = get_unique_short_id()
     url = URLMap(
         original=form.original_link.data,
         short=short_url,
