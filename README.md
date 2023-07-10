@@ -2,6 +2,15 @@
 ## Описание:
 Проект YaCut — это сервис укорачивания ссылок. Его назначение — ассоциировать длинную пользовательскую ссылку с короткой, которую предлагает сам пользователь или предоставляет сервис.
 
+## Технологии
+
+* [Python 3](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/en/)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+* [WTForms](https://wtforms.readthedocs.io/en/)
+* [Flask-WTF](https://flask-wtf.readthedocs.io/en/)
+* [Flask-Migrate](https://flask-migrate.readthedocs.io/en/)
+
 ## Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
